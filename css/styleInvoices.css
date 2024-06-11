@@ -1,0 +1,231 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background: #f4f4f4;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    width: 250px;
+    background: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    box-sizing: border-box;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin: 1rem 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background: #555;
+}
+
+.sidebar ul li a.active {
+    background: #555;
+}
+
+.icon-home,
+.icon-invoice,
+.icon-client,
+.icon-inventory,
+.icon-services,
+.icon-settings {
+    margin-right: 1rem;
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.invoice-section {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.invoice-section h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background: #f4f4f4;
+    font-weight: bold;
+}
+
+.btn-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 1rem;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+}
+
+.btn-float:hover {
+    background: #555;
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+table th button,
+table td button {
+    padding: 0.5rem 1rem;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-right: 0.5rem;
+}
+
+table th button:hover,
+table td button:hover {
+    background: #555;
+}
+
+.modal-content form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.modal-content form label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.modal-content form input[type="text"],
+.modal-content form input[type="email"],
+.modal-content form input[type="date"],
+.modal-content form input[type="number"],
+.modal-content form select,
+.modal-content form textarea,
+.modal-content form input[type="file"] {
+    width: calc(100% - 20px);
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.modal-content form select {
+    appearance: none;
+    padding: 0.5rem;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0.7em top 50%, 0 0;
+    background-size: 1.5em auto, 100%;
+}
+
+.modal-content form button[type="submit"],
+.modal-content form button.btn-cancel {
+    padding: 0.75rem 1.5rem;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-right: 0.5rem;
+}
+
+.modal-content form button[type="submit"]:hover,
+.modal-content form button.btn-cancel:hover {
+    background: #555;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="./css/styleLogin.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-form">
+            <h2>Inicio de Sesión</h2>
+            <form id="loginForm">
+                <label for="username">Usuario</label>
+                <input type="text" id="username" name="username" placeholder="Ingrese su usuario" required>
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required>
+                <button type="submit" id="loginButton" disabled>Iniciar Sesión</button>
+                <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('input', function() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            document.getElementById('loginButton').disabled = !(username && password);
+        });
+    </script>
+</body>
+</html>

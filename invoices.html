@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facturación</title>
+    <link rel="stylesheet" href="./css/styleInvoices.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <ul>
+            <li><a href="home.html"><i class="icon-home"></i>Inicio</a></li>
+            <li><a href="invoices.html"><i class="icon-invoice"></i>Facturas</a></li>
+            <li><a href="clients.html"><i class="icon-client"></i>Clientes</a></li>
+            <li><a href="inventory.html"><i class="icon-inventory"></i>Inventario</a></li>
+            <li><a href="services.html"><i class="icon-services"></i>Servicios</a></li>
+            <li><a href="settings.html" class="icon-settings"><i class="icon-settings"></i>Configuración</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>Facturación</h1>
+        </header>
+        <section class="invoice-section">
+            <h2>Facturas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Número de Factura</th>
+                        <th>Cliente</th>
+                        <th>Fecha</th>
+                        <th>Total</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>Juan Pérez</td>
+                        <td>2024-06-01</td>
+                        <td>$150.00</td>
+                        <td>
+                            <button class="btn-edit">Editar</button>
+                            <button class="btn-delete">Eliminar</button>
+                        </td>
+                    </tr>
+                    <!-- Agregar 9 registros más aquí -->
+                </tbody>
+            </table>
+            <button class="btn-float">Crear Nueva Factura</button>
+        </section>
+
+        <!-- Modal para agregar nueva factura -->
+        <div id="modal-add-invoice" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Agregar Nueva Factura</h2>
+                <form action="#">
+                    <div class="form-group">
+                        <label for="invoiceNumber">Número de Factura:</label>
+                        <input type="text" id="invoiceNumber" name="invoiceNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="clientName">Nombre del Cliente:</label>
+                        <input type="text" id="clientName" name="clientName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="clientEmail">Correo Electrónico del Cliente:</label>
+                        <input type="email" id="clientEmail" name="clientEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="clientAddress">Dirección del Cliente:</label>
+                        <input type="text" id="clientAddress" name="clientAddress" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="invoiceDate">Fecha de la Factura:</label>
+                        <input type="date" id="invoiceDate" name="invoiceDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dueDate">Fecha de Vencimiento:</label>
+                        <input type="date" id="dueDate" name="dueDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="itemDescription">Descripción del Ítem:</label>
+                        <input type="text" id="itemDescription" name="itemDescription" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="itemPrice">Precio del Ítem:</label>
+                        <input type="number" id="itemPrice" name="itemPrice" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="itemQuantity">Cantidad:</label>
+                        <input type="number" id="itemQuantity" name="itemQuantity" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="itemTotal">Total del Ítem:</label>
+                        <input type="number" id="itemTotal" name="itemTotal" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="total">Total de la Factura:</label>
+                        <input type="number" id="total" name="total" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="paymentMethod">Método de Pago:</label>
+                        <select id="paymentMethod" name="paymentMethod" required>
+                            <option value="">Seleccionar</option>
+                            <option value="efectivo">Efectivo</option>
+                            <option value="tarjeta">Tarjeta de Crédito/Débito</option>
+                            <option value="transferencia">Transferencia Bancaria</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Notas:</label>
+                        <textarea id="notes" name="notes" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="signature">Firma:</label>
+                        <input type="file" id="signature" name="signature" accept="image/*" required>
+                    </div>
+                    <button type="submit">Guardar</button>
+                    <button type="button" class="btn-cancel">Cancelar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Obtener el botón flotante y el modal
+        var btnFloat = document.querySelector('.btn-float');
+        var modal = document.getElementById('modal-add-invoice');
+
+        // Obtener el botón de cerrar modal
+        var closeModal = document.querySelector('.close');
+
+        // Obtener el contenido del modal
+        var modalContent = document.querySelector('.modal-content');
+
+        // Ajustar la posición del modal cuando se abre
+        function openModal() {
+            modal.style.display = 'block';
+            modalContent.scrollTop = 0; // Asegurarse de que el scroll esté en la parte superior
+        }
+
+        // Cerrar el modal
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        // Evento para abrir el modal
+        btnFloat.addEventListener('click', openModal);
+
+        document.querySelector('.close').addEventListener('click', closeModal);
+
+        // Evento para cerrar el modal haciendo clic fuera del contenido del modal
+        window.addEventListener('click', function (event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+
+</html>

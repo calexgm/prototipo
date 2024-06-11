@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <link rel="stylesheet" href="./css/styleClient.css">
+</head>
+<body>
+    <div class="sidebar">
+        <ul>
+            <li><a href="home.html"><i class="icon-home"></i>Inicio</a></li>
+            <li><a href="invoices.html"><i class="icon-invoice"></i>Facturas</a></li>
+            <li><a href="clients.html"><i class="icon-client active"></i>Clientes</a></li>
+            <li><a href="inventory.html"><i class="icon-inventory"></i>Inventario</a></li>
+            <li><a href="services.html"><i class="icon-services"></i>Servicios</a></li>
+            <li><a href="settings.html" class="icon-settings"><i class="icon-settings"></i>Configuración</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>Clientes</h1>
+        </header>
+        <section class="client-list">
+            <h2>Lista de Clientes</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID Cliente</th>
+                        <th>Nombre</th>
+                        <th>Correo Electrónico</th>
+                        <th>Teléfono</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>Juan Pérez</td>
+                        <td>juan.perez@example.com</td>
+                        <td>123-456-7890</td>
+                        <td>
+                            <button class="btn-edit" onclick="openModal('edit')">Editar</button>
+                            <button class="btn-delete">Eliminar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>María López</td>
+                        <td>maria.lopez@example.com</td>
+                        <td>123-456-7890</td>
+                        <td>
+                            <button class="btn-edit" onclick="openModal('edit')">Editar</button>
+                            <button class="btn-delete">Eliminar</button>
+                        </td>
+                    </tr>
+                    <!-- Agregar más filas según sea necesario -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+    <button class="floating-btn" onclick="openModal('add')">+</button>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Agregar Cliente</h2>
+            <form id="clientForm">
+                <label for="clientName">Nombre:</label>
+                <input type="text" id="clientName" name="clientName" required>
+                <label for="clientEmail">Correo Electrónico:</label>
+                <input type="email" id="clientEmail" name="clientEmail" required>
+                <label for="clientPhone">Teléfono:</label>
+                <input type="tel" id="clientPhone" name="clientPhone" required>
+                <label for="clientAddress">Dirección:</label>
+                <input type="text" id="clientAddress" name="clientAddress" required>
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal(mode) {
+            const modal = document.getElementById('modal');
+            const title = document.getElementById('modal-title');
+            const form = document.getElementById('clientForm');
+            if (mode === 'edit') {
+                title.textContent = 'Editar Cliente';
+                // Aquí puedes rellenar los campos del formulario con los datos del cliente a editar
+            } else {
+                title.textContent = 'Agregar Cliente';
+                form.reset();
+            }
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

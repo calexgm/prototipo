@@ -1,0 +1,134 @@
+/* styles.css */
+
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background: #f4f4f4;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    width: 250px;
+    background: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    box-sizing: border-box;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin: 1rem 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background: #555;
+}
+
+.sidebar ul li a.active {
+    background: #555;
+}
+
+.icon-home, .icon-invoice, .icon-client, .icon-inventory, .icon-services, .icon-settings {
+    margin-right: 1rem;
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.service-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.service-card {
+    background: white;
+    width: calc(25% - 1rem); /* Cambiado para 2 tarjetas por fila */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.service-card img {
+    width: 100%;
+    height: 150px; /* Reducido el tamaño de la imagen */
+}
+
+.service-info {
+    padding: 1rem;
+}
+
+.service-info h2 {
+    margin-top: 0;
+    font-size: 1rem; /* Reducido el tamaño del título */
+}
+
+.service-info p {
+    margin-bottom: 0.5rem; /* Reducido el espacio entre párrafos */
+}
+
+.btn-remove, .btn-add {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 1rem;
+}
+
+.btn-remove {
+    background: #f44336;
+    color: white;
+}
+
+.btn-remove:hover {
+    background: #e53935;
+}
+
+.btn-add {
+    background: #4CAF50;
+    color: white;
+}
+
+.btn-add:hover {
+    background: #45a049;
+}

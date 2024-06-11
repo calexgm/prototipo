@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Principal</title>
+    <link rel="stylesheet" href="./css/styleHome.css">
+</head>
+<body>
+    <div class="sidebar">
+        <ul>
+            <li><a href="home.html"><i class="icon-home"></i>Inicio</a></li>
+            <li><a href="invoices.html"><i class="icon-invoice"></i>Facturas</a></li>
+            <li><a href="clients.html"><i class="icon-client"></i>Clientes</a></li>
+            <li><a href="inventory.html"><i class="icon-inventory"></i>Inventario</a></li>
+            <li><a href="services.html"><i class="icon-services"></i>Servicios</a></li>
+            <li><a href="settings.html" class="icon-settings"><i class="icon-settings"></i>Configuración</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>Bienvenido al Panel Principal</h1>
+        </header>
+        <section class="recent-invoices">
+            <h2>Facturas Recientes</h2>
+            <input type="text" id="invoiceSearch" placeholder="Buscar facturas...">
+            <ul>
+                <!-- Lista de facturas recientes (puedes agregar más elementos) -->
+                <li>Factura #001 - Cliente A - $100.00</li>
+                <li>Factura #002 - Cliente B - $150.00</li>
+                <li>Factura #003 - Cliente C - $200.00</li>
+                <li>Factura #004 - Cliente D - $250.00</li>
+                <li>Factura #005 - Cliente E - $300.00</li>
+                <li>Factura #006 - Cliente F - $350.00</li>
+                <li>Factura #007 - Cliente G - $400.00</li>
+                <li>Factura #008 - Cliente H - $450.00</li>
+                <li>Factura #009 - Cliente I - $500.00</li>
+                <li>Factura #010 - Cliente J - $550.00</li>
+            </ul>
+        </section>
+    </div>
+    <button class="floating-btn">+</button>
+</body>
+</html>

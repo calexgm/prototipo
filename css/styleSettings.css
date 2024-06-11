@@ -1,0 +1,162 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background: #f4f4f4;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    width: 250px;
+    background: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    box-sizing: border-box;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin: 1rem 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background: #555;
+}
+
+.sidebar ul li a.active {
+    background: #555;
+}
+
+.icon-home, .icon-invoice, .icon-client, .icon-inventory, .icon-services, .icon-settings {
+    margin-right: 1rem;
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.profile-section, .terms-section {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.profile-section h2, .terms-section h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.profile-section form label, .terms-section p {
+    margin-bottom: 1rem;
+}
+
+.profile-section form input[type="email"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.profile-section form button {
+    padding: 0.75rem 1.5rem;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.profile-section form button:hover {
+    background: #555;
+}
+
+.terms-section .btn-download {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.terms-section .btn-download:hover {
+    background: #555;
+}
+
+.profile-section form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.profile-section form label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.profile-section form input[type="text"],
+.profile-section form input[type="email"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.profile-section form button {
+    padding: 0.75rem 1.5rem;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.profile-section form button:hover {
+    background: #555;
+}

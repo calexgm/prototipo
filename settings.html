@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración</title>
+    <link rel="stylesheet" href="./css/styleSettings.css">
+</head>
+<body>
+    <div class="sidebar">
+        <ul>
+            <li><a href="home.html"><i class="icon-home"></i>Inicio</a></li>
+            <li><a href="invoices.html"><i class="icon-invoice"></i>Facturas</a></li>
+            <li><a href="clients.html"><i class="icon-client"></i>Clientes</a></li>
+            <li><a href="inventory.html"><i class="icon-inventory"></i>Inventario</a></li>
+            <li><a href="services.html"><i class="icon-services"></i>Servicios</a></li>
+            <li><a href="settings.html" class="active"><i class="icon-settings"></i>Configuración</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>Configuración</h1>
+        </header>
+        <section class="profile-section">
+            <h2>Perfil</h2>
+            <form action="#">
+                <div class="form-group">
+                    <label for="companyName">Nombre de la empresa:</label>
+                    <input type="text" id="companyName" name="companyName" disabled value="Nombre de la empresa" required>
+                </div>
+                <div class="form-group">
+                    <label for="nit">NIT:</label>
+                    <input type="text" id="nit" name="nit" disabled value="NIT de la empresa" required>
+                </div>
+                <div class="form-group">
+                    <label for="commercialName">Nombre comercial:</label>
+                    <input type="text" id="commercialName" name="commercialName" disabled value="Nombre comercial de la empresa" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="correo@empresa.com" required>
+                </div>
+                <button type="submit">Actualizar</button>
+            </form>
+        </section>
+        <section class="terms-section">
+            <h2>Términos y Condiciones</h2>
+            <p>Aquí puedes descargar los términos y condiciones de uso de la plataforma.</p>
+            <a href="terminos_y_condiciones.pdf" download class="btn-download">Descargar Términos y Condiciones</a>
+        </section>
+    </div>
+</body>
+</html>

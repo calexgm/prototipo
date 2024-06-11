@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios</title>
+    <link rel="stylesheet" href="./css/styleServices.css">
+</head>
+<body>
+    <div class="sidebar">
+        <ul>
+            <li><a href="home.html"><i class="icon-home"></i>Inicio</a></li>
+            <li><a href="invoices.html"><i class="icon-invoice"></i>Facturas</a></li>
+            <li><a href="clients.html"><i class="icon-client"></i>Clientes</a></li>
+            <li><a href="inventory.html"><i class="icon-inventory"></i>Inventario</a></li>
+            <li><a href="services.html"><i class="icon-services"></i>Servicios</a></li>
+            <li><a href="settings.html" class="icon-settings"><i class="icon-settings"></i>Configuración</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>Servicios</h1>
+        </header>
+        <section class="service-list">
+            <div class="service-card">
+                <img src="./imgs/inventario.png" alt="Servicio 1">
+                <div class="service-info">
+                    <h2>Inventario</h2>
+                    <p>Servicio de gestión de inventario.</p>
+                    <button class="btn-remove">Eliminar</button>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="./imgs/facturacion.jpeg" alt="Servicio 2">
+                <div class="service-info">
+                    <h2>Facturación Electrónica</h2>
+                    <p>Servicio de generación de facturas electrónicas.</p>
+                    <button class="btn-add">Adquirir</button>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="./imgs/ecommerce.jpg" alt="Servicio 3">
+                <div class="service-info">
+                    <h2>E-commerce</h2>
+                    <p>Servicio de plataforma de comercio electrónico.</p>
+                    <button class="btn-add">Adquirir</button>
+                </div>
+            </div>
+            <!-- Agregar más tarjetas de servicios según sea necesario -->
+        </section>
+    </div>
+
+    <script>
+        const removeButtons = document.querySelectorAll('.btn-remove');
+        removeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Aquí puedes implementar la lógica para eliminar el servicio
+                console.log('Servicio eliminado');
+            });
+        });
+
+        const addButtons = document.querySelectorAll('.btn-add');
+        addButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Aquí puedes implementar la lógica para adquirir el servicio
+                console.log('Servicio adquirido');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+    <link rel="stylesheet" href="./css/styleInventary.css">
+</head>
+<body>
+    <div class="sidebar">
+        <ul>
+            <li><a href="home.html"><i class="icon-home"></i>Inicio</a></li>
+            <li><a href="invoices.html"><i class="icon-invoice"></i>Facturas</a></li>
+            <li><a href="clients.html"><i class="icon-client"></i>Clientes</a></li>
+            <li><a href="inventory.html"><i class="icon-inventory"></i>Inventario</a></li>
+            <li><a href="services.html"><i class="icon-services"></i>Servicios</a></li>
+            <li><a href="settings.html" class="icon-settings"><i class="icon-settings"></i>Configuración</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>Inventario</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar por nombre...">
+                <button class="btn-filter">Filtros</button>
+            </div>
+        </header>
+        <section class="product-list">
+            <div class="product-card">
+                <img src="./imgs/producto.jpg" alt="Producto 1">
+                <div class="product-info">
+                    <h2>Producto 1</h2>
+                    <p>Descripción corta del producto 1.</p>
+                    <p>Precio: $10</p>
+                    <p>Cantidad: 20</p>
+                    <button class="btn-edit" onclick="openModal('edit')">Editar</button>
+                    <button class="btn-delete">Eliminar</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="./imgs/producto.jpg" alt="Producto 2">
+                <div class="product-info">
+                    <h2>Producto 2</h2>
+                    <p>Descripción corta del producto 2.</p>
+                    <p>Precio: $15</p>
+                    <p>Cantidad: 15</p>
+                    <button class="btn-edit" onclick="openModal('edit')">Editar</button>
+                    <button class="btn-delete">Eliminar</button>
+                </div>
+            </div>
+            <!-- Agregar más tarjetas de productos según sea necesario -->
+        </section>
+    </div>
+    <button class="floating-btn" onclick="openModal('add')">+</button>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Agregar Producto</h2>
+            <form id="productForm">
+                <label for="productName">Nombre:</label>
+                <input type="text" id="productName" name="productName" required>
+                <label for="productDescription">Descripción:</label>
+                <input type="text" id="productDescription" name="productDescription" required>
+                <label for="productPrice">Precio:</label>
+                <input type="number" id="productPrice" name="productPrice" required>
+                <label for="productQuantity">Cantidad:</label>
+                <input type="number" id="productQuantity" name="productQuantity" required>
+                <label for="productImage">Imagen:</label>
+                <input type="file" id="productImage" name="productImage" required>
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal(mode) {
+            const modal = document.getElementById('modal');
+            const title = document.getElementById('modal-title');
+            const form = document.getElementById('productForm');
+            if (mode === 'edit') {
+                title.textContent = 'Editar Producto';
+                // Aquí puedes rellenar los campos del formulario con los datos del producto a editar
+            } else {
+                title.textContent = 'Agregar Producto';
+                form.reset();
+            }
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
